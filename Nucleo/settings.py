@@ -13,11 +13,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = [
+    
     "www.proyectoabogados.link",
     ".proyectoabogados.link",
     "proyectoabogados.link"
@@ -125,26 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-if not DEBUG:
-    EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
-    EMAIL_HOST= env ("EMAIL_HOST")
-    EMAIL_HOST_USER= env ("EMAIL_HOST_USER")
-    EMAIL_HOST_PASSWORD = env ("EMAIL_HOST_PASSWORD")
-    EMAIL_PORT= env ("EMAIL_PORT")
-    EMAIL_USE_TLS= env ("EMAIL_USE_TLS")
-
-    SESSION_COOKIE_SECURE = True
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_SENCONDS= 31536000
-    SECURE_REDIRECT_EXEMPT= []
-    SECURE_SSL_REDIRECT = True
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARED_PROTO","https")
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

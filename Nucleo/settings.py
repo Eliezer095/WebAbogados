@@ -19,7 +19,7 @@ DEBUG = DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = [
     
-    
+   
 ]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -124,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIR = (os.path.join(BASE_DIR,"Nucleo/static"),)
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Default primary key field type

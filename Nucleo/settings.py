@@ -125,8 +125,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIR = (os.path.join(BASE_DIR,"Nucleo/static"),)
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

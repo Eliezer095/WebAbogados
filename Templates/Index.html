@@ -77,6 +77,61 @@
     </section>
 
     <!-- Botón flotante -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup para WhatsApp</title>
+    <style>
+      /* Estilo para el popup */
+      #whatsapp-popup {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1000;
+      }
+  
+      #whatsapp-popup a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+  
+      #whatsapp-popup button {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botón que activa el popup -->
+    <button onclick="openPopup()">Chat WhatsApp</button>
+  
+    <!-- Contenido del popup -->
+    <div id="whatsapp-popup">
+      ¿Necesitas ayuda? <a href="https://wa.me/52XXXXXXXXXX" target="_blank">Inicia un chat en WhatsApp</a>
+      <button onclick="closePopup()">X</button>
+    </div>
+  
+    <script>
+      // Función para abrir el popup
+      function openPopup() {
+        document.getElementById('whatsapp-popup').style.display = 'block';
+      }
+  
+      // Función para cerrar el popup
+      function closePopup() {
+        document.getElementById('whatsapp-popup').style.display = 'none';
+      }
+    </script>
     <a href="#contacto" class="btn-flotante" title="Contáctanos">💬</a>
 
     <!-- Sección de contacto -->

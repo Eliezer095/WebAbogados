@@ -17,7 +17,7 @@ body {
 
 /* Encabezado */
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("% static 'imagenes/proyecto1.jpg' %}" alt="Descripción de la imagen" height="200px" width="350px" class="center";
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Images/Proyecto3.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
